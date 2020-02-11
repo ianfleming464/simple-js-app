@@ -4,5 +4,15 @@ var repository = [
   { name: 'Charizard', height: 5.07, types: ['fire', 'flying'] },
   { name: 'Empoleon', height: 5.07, types: ['water', 'steel'] },
   { name: 'Psyduck', height: 2.07, types: ['water'] },
-  { name: 'Jynx', height: 4.07, types: ['ice', 'psychic'] }
+  { name: 'Jynx', height: 4.07, types: ['ice', 'psychic'] } //6 item array //
 ];
+
+
+for (var i = 0; i < repository.length; i++) {
+  var pokemon = repository[i];
+  if (pokemon.height >= 6) {
+    document.write(pokemon.name + ' ' + ' (height: ' + pokemon.height + ') ' + ' - Wow! That\s big' + '<br>');
+  } else {
+    document.write(pokemon.name + ' ' + ' (height: ' + pokemon.height + ') ' + '<br>');
+  }
+}
