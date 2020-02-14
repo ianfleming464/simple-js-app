@@ -7,12 +7,21 @@ var repository = [
   { name: 'Jynx', height: 4.07, types: ['ice', 'psychic'] } //6 item array //
 ];
 
+// Using a for loop:
+// for (var i = 0; i < repository.length; i++) {
+//   var pokemon = repository[i];
+//   if (pokemon.height >= 6) {
+//     document.write(pokemon.name + ' ' + ' (height: ' + pokemon.height + ') ' + ' - Wow! That\s big' + '<br>');
+//   } else {
+//     document.write(pokemon.name + ' ' + ' (height: ' + pokemon.height + ') ' + '<br>');
+//   }
+// }
 
-for (var i = 0; i < repository.length; i++) {
-  var pokemon = repository[i];
-  if (pokemon.height >= 6) {
-    document.write(pokemon.name + ' ' + ' (height: ' + pokemon.height + ') ' + ' - Wow! That\s big' + '<br>');
+// Using a forEach loop:
+repository.forEach(function(currentPokemon){
+  if (currentPokemon.height >= 6) {
+    document.write(currentPokemon.name + ' ' + ' (height: ' + currentPokemon.height + ') ' + ' - Wow! That\s big' + '<br>');
   } else {
-    document.write(pokemon.name + ' ' + ' (height: ' + pokemon.height + ') ' + '<br>');
+    document.write(currentPokemon.name + ' ' + ' (height: ' + currentPokemon.height + ') ' + '<br>');
   }
-}
+});
