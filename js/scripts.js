@@ -26,7 +26,7 @@ pokemonRepository.add({ name: 'Caterpie', height: 1.00, type: ['bug'] }); //1.00
 console.log(pokemonRepository.getAll());
 
 
-// Using a forEach loop:
+// Using a forEach loop to access the IIFE:
 pokemonRepository.getAll().forEach(function(currentPokemon){
   if (currentPokemon.height >= 6) {
     document.write(currentPokemon.name + ' ' + ' (height: ' + currentPokemon.height + ') ' + ' - Wow! That\s big' + '<br>');
