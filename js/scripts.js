@@ -8,23 +8,26 @@ var pokemonRepository = (function () { //IIFE
     { name: 'Jynx', height: 4.07, type: ['ice', 'psychic'] }
   ];
 
-    return {
-      add: function(name, type, height) {
-        repository.push(name, type, height);
-      },
-      getAll: function() {
-        return repository;
-      }
-    };
+  function add(name, height, type) {
+    repository.push(name, height, type);
+  }
+
+  function getAll() {
+    return repository;
+  }
+
+  return {
+    add: add,
+    getAll: getAll
+  };
 })();
 
+pokemonRepository.add({ name: 'Caterpie', height: 1.00, type: ['bug'] }); //1.00 rounds to 1?
+console.log(pokemonRepository.getAll());
 
-console.log(pokemonRepository.getAll());
-pokemonRepository.add({ name: 'Caterpie', height: 1.00, type: ['bug'] });
-console.log(pokemonRepository.getAll());
 
 // Using a forEach loop:
-repository.forEach(function(currentPokemon){
+pokemonRepository.getAll().forEach(function(currentPokemon){
   if (currentPokemon.height >= 6) {
     document.write(currentPokemon.name + ' ' + ' (height: ' + currentPokemon.height + ') ' + ' - Wow! That\s big' + '<br>');
   } else {
