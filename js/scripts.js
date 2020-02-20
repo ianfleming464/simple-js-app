@@ -22,7 +22,7 @@ var pokemonRepository = (function () { //IIFE
   };
 })();
 
-pokemonRepository.add({ name: 'Caterpie', height: 1.00, type: ['bug'] }); //1.00 rounds to 1?
+pokemonRepository.add({ name: 'Caterpie', height: 1.00, type: ['bug']}); //1.00 rounds to 1?
 console.log(pokemonRepository.getAll());
 
 
