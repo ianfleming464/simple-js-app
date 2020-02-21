@@ -8,8 +8,8 @@ var pokemonRepository = (function () { //IIFE
     { name: 'Jynx', height: 4.07, type: ['ice', 'psychic'] }
   ];
 
-  function add(name, height, type) {
-    repository.push(name, height, type);
+  function add(newPokemon) {
+    repository.push(newPokemon);
   }
 
   function getAll() {
