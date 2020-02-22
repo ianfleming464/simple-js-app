@@ -24,13 +24,21 @@ var pokemonRepository = (function () { //IIFE
     button.classList.add('button-class');
     $listItem.appendChild(button);
     $pokeList.appendChild($listItem);
-  }
+    button.addEventListener('click', function(event) {
+      showDetails(pokemon);
+    }
+  );
+}
 
-  return {
-    add: add,
-    getAll: getAll,
-    addListItem: addListItem
-  };
+function showDetails(pokemon) {
+  console.log(pokemon.name);
+}
+return { //the keys: IIFE functions; the values: what the outside world knows them as
+  add: add,
+  getAll: getAll,
+  addListItem: addListItem,
+  showDetails: showDetails
+};
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon){
