@@ -16,21 +16,23 @@ var pokemonRepository = (function () { //IIFE
     return repository;
   }
 
+  function addListItem(pokemon) {
+    var $pokeList = document.querySelector('.pokemon-list');
+    var button = document.createElement('button');
+    var $listItem = document.createElement('li');
+    button.innerText = pokemon.name;
+    button.classList.add('button-class');
+    $listItem.appendChild(button);
+    $pokeList.appendChild($listItem);
+  }
+
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem
   };
 })();
 
-pokemonRepository.add({ name: 'Caterpie', height: 1.00, type: ['bug']}); //1.00 rounds to 1?
-console.log(pokemonRepository.getAll());
-
-
-// Using a forEach loop to access the IIFE:
-pokemonRepository.getAll().forEach(function(currentPokemon){
-  if (currentPokemon.height >= 6) {
-    document.write(currentPokemon.name + ' ' + ' (height: ' + currentPokemon.height + ') ' + ' - Wow! That\s big' + '<br>');
-  } else {
-    document.write(currentPokemon.name + ' ' + ' (height: ' + currentPokemon.height + ') ' + '<br>');
-  }
+pokemonRepository.getAll().forEach(function(pokemon){
+  pokemonRepository.addListItem(pokemon);
 });
