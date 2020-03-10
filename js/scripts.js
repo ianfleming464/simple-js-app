@@ -95,6 +95,7 @@ function showModal(item) {
   var imageElement = document.createElement('img');
   imageElement.classList.add('modal-img');
   imageElement.setAttribute('src', item.imageUrl);
+
   // Types?
   var typesElement = document.createElement('p');
   typesElement.innerText = 'Types: ' + ' ' + item.types;
@@ -106,19 +107,12 @@ function showModal(item) {
   modal.appendChild(heightElement);
   modal.appendChild(imageElement);
   $modalContainer.appendChild(modal);
-
-  $modalContainer.classList.add('is-visible');
 }
 
 // var dialogPromiseReject; //This can be set later by showDialog
 
 function hideModal() {
   $modalContainer.classList.remove('is-visible');
-
-  if (dialogPromiseReject) {
-    dialogPromiseReject();
-    dialogPromiseReject = null;
-  }
 }
 
 window.addEventListener('keydown', e => {
